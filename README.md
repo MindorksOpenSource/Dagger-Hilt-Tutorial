@@ -7,6 +7,7 @@ This repository contains a sample app that implements Dagger-Hilt in MVVM archit
   <img src="https://github.com/MindorksOpenSource/Dagger-Hilt-Tutorial/blob/master/assets/banner-dagger-hilt.png">
 </p>
 
+### Concept reference resources - [Dagger Hilt Tutorial - Step by Step Guide](https://blog.mindorks.com/dagger-hilt-tutorial)
 
 
 #### The app has following packages:
