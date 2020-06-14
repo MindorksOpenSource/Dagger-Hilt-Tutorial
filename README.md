@@ -4,7 +4,7 @@
 
 This repository contains a sample app that implements Dagger-Hilt in MVVM architecture using Kotlin.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/MindorksOpenSource/MVVM-Architecture-Android-Beginners/master/assets/banner-mvvm-arch-beginners.jpg">
+  <img src="https://github.com/MindorksOpenSource/Dagger-Hilt-Tutorial/blob/master/assets/banner-dagger-hilt.png">
 </p>
 
 
