@@ -11,6 +11,7 @@ import javax.inject.Singleton
 @Singleton
 class NetworkHelper @Inject constructor(@ApplicationContext private val context: Context) {
 
+    @Suppress("DEPRECATION")
     fun isNetworkConnected(): Boolean {
         var result = false
         val connectivityManager =
@@ -23,6 +24,7 @@ class NetworkHelper @Inject constructor(@ApplicationContext private val context:
                 activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
                 activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
                 activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_VPN) -> true
                 else -> false
             }
         } else {
@@ -32,6 +34,7 @@ class NetworkHelper @Inject constructor(@ApplicationContext private val context:
                         ConnectivityManager.TYPE_WIFI -> true
                         ConnectivityManager.TYPE_MOBILE -> true
                         ConnectivityManager.TYPE_ETHERNET -> true
+                        ConnectivityManager.TYPE_VPN -> true
                         else -> false
                     }
 
