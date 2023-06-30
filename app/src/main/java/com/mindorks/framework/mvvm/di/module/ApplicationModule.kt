@@ -11,7 +11,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import javax.inject.Singleton
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
 import retrofit2.converter.moshi.MoshiConverterFactory
 import dagger.hilt.components.SingletonComponent
 
