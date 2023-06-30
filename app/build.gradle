@@ -1,17 +1,16 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.mindorks.framework.mvvm"
-        minSdkVersion 16
-        targetSdkVersion 29
+        minSdkVersion 21
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
@@ -28,14 +27,19 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     // work-runtime-ktx 2.1.0 and above now requires Java 8
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
-
+    buildFeatures{
+        viewBinding true
+        dataBinding true
+        buildConfig = true
+    }
+    namespace 'com.mindorks.framework.mvvm'
 }
 
 dependencies {
@@ -47,6 +51,7 @@ dependencies {
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation "androidx.navigation:navigation-compose:2.5.3"
 
     // Added Dependencies
     implementation "androidx.recyclerview:recyclerview:1.1.0"
@@ -56,10 +61,10 @@ dependencies {
 
 
     //Dagger
-    implementation 'com.google.dagger:hilt-android:2.28-alpha'
-    kapt 'com.google.dagger:hilt-android-compiler:2.28-alpha'
-    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01'
-    kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha01'
+    implementation 'com.google.dagger:hilt-android:2.46.1'
+    kapt 'com.google.dagger:hilt-android-compiler:2.46.1'
+    kapt 'androidx.hilt:hilt-compiler:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
 
 
     // Networking
